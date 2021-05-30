@@ -1,6 +1,6 @@
 class DoctorSerializer
   include FastJsonapi::ObjectSerializer
-  attributes :name, :address
+  attributes :first_name, last_name, :address
 
   def reviews
     self.object.reviews.map do |r|
