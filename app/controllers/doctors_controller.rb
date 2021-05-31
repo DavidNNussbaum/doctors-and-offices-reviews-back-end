@@ -4,7 +4,7 @@ class DoctorsController < ApplicationController
     def index
       @doctors = Doctor.all
   
-      render json: @doctors
+      render json: DoctorSerializer.new(@doctors).serializable_hash 
     end
   
  
@@ -44,7 +44,7 @@ class DoctorsController < ApplicationController
     private
        
       def set_doctor
-        @doctor = Dotor.find(params[:id])
+        @doctor = Doctor.find(params[:id])
       end
   
      
@@ -52,5 +52,3 @@ class DoctorsController < ApplicationController
         params.require(:doctor).permit(:first_name, :last_name, :address)
       end
   end 
-
-end
