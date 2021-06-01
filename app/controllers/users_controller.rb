@@ -1,10 +1,13 @@
 class UsersController < ApplicationController
-    before_action :set_product, only: [:show, :update, :destroy]
+     
+  before_action :find_user, only: [:show, :edit, :update, :destroy]
+  before_action :redirect_if_not_logged_in, except: [:welcome, :new]
 
    
   def show
     render json: @user
   end
+
 
    
   def create
@@ -29,7 +32,16 @@ class UsersController < ApplicationController
   private
     
     def user_params
-      params.require(:user).permit(:email, :password)
+      params.require(:user).permit(:email, :password, :password_confirmation)
     end
 end
-end
+
+     
+    
+    
+  
+     
+  
+    
+  
+     
