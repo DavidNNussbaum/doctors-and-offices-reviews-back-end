@@ -14,7 +14,8 @@ class DoctorSerializer
         doctor_office_rating: r.doctor_office_rating,
         doctor_office_comments: r.doctor_office_comments,
         doctor_id: r.doctor_id,
-        user_id: r.user_id
+        user_id: r.user_id,
+        id: r.id
       }
     end
   end

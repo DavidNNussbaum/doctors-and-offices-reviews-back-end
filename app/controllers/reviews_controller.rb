@@ -3,7 +3,8 @@ class ReviewsController < ApplicationController
 
    
   def index
-    @reviews = Review.all
+    doctor = Doctor.find_by(id: params[:doctor_id])
+    @reviews = doctor.reviews
 
     render json: @reviews
   end
@@ -53,6 +54,6 @@ class ReviewsController < ApplicationController
       params.require(:review).permit(:doctor_rating, :doctor_comments, :doctor_office_rating, :doctor_office_comments, :doctor_id, :user_id )
     end
 end
-end
+
 
  
