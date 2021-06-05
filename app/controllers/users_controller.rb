@@ -1,11 +1,11 @@
 class UsersController < ApplicationController
      
   before_action :find_user, only: [:show, :edit, :update, :destroy]
-  before_action :redirect_if_not_logged_in, except: [:welcome, :new]
+   
 
    
   def show
-    render json: @user
+    render json: UserSerializer.new(@user).serializable_hash 
   end
 
   def index
@@ -36,6 +36,11 @@ class UsersController < ApplicationController
   end
 
   private
+
+  def find_user
+    @user = User.find_by(id: params[:id])
+  end
+
     
     def user_params
       params.require(:user).permit(:first_name, :email, :password, :password_confirmation)

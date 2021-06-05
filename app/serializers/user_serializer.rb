@@ -1,14 +1,14 @@
 class UserSerializer
   include FastJsonapi::ObjectSerializer
-  attributes :first_name, :email, :id
+  attributes :first_name, :id, :doctors
 
   def doctors
-    self.object.doctors.map do |u|
+    self.object.doctors.map do |d|
       {
-        first_name: u.doctor_id.first_name,
-        last_name: u.doctor_id.last_name,
-        address: u.doctor_id.address,
-        doctor_id: r.doctor_id,
+        first_name: d.first_name,
+        last_name: d.last_name,
+        address: d.address,
+        id: d.id,
       }
     end
   end
