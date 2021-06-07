@@ -17,6 +17,7 @@ class UsersController < ApplicationController
     if @user.nil?
       @user = User.new(user_params)
     end
+
     if @user.save
       render json: UserSerializer.new(@user).serializable_hash , status: :created, location: @user
     else

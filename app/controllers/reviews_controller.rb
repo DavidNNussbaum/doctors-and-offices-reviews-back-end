@@ -6,7 +6,7 @@ class ReviewsController < ApplicationController
     doctor = Doctor.find_by(id: params[:doctor_id])
     @reviews = doctor.reviews
 
-    render json: @reviews
+    render json: ReviewSerializer.new(@reviews).serializable_hash 
   end
 
   

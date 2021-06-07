@@ -1,6 +1,6 @@
 class DoctorSerializer
   include FastJsonapi::ObjectSerializer
-  attributes :first_name, :last_name, :address
+  attributes :first_name, :last_name, :address, :id
 
   attribute :name do |user|
     "#{user.first_name} #{user.last_name}"

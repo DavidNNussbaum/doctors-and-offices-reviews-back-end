@@ -2,7 +2,7 @@ class DoctorsController < ApplicationController
     before_action :set_doctor, only: [:show, :update, :destroy]
 
     def index
-      @doctors = Doctor.all
+      @doctors = Doctor.order_by_last_name
   
       render json: DoctorSerializer.new(@doctors).serializable_hash 
     end

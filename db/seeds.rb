@@ -5,13 +5,10 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-User.create(First_name: email: "fri@dos.com", password: "890")
-User.create(First_name: email: "fri@dos.com", password: "890")
-User.create(First_name: email: "fri@dos.com", password: "890")
-Doctor.create(first_name:, last_name:, address:)
-Doctor.create(first_name:, last_name:, address:)
-Doctor.create(first_name:, last_name:, address:)
-Doctor.create(first_name:, last_name:, address:)
+User.create(First_name: "Fri", email: "fri@dos.com", password: "890")
+User.create(First_name: "Eve", email: "eve@dos.com", password: "890")
+User.create(First_name: email: "Max, "max@dos.com", password: "890")
+Doctor.create(first_name: "Evan", last_name: "Philips", address: "850 Main")
 Review.create(doctor_rating: 5, doctor_comments: "Great", doctor_office_rating: 2, doctor_office_comments: "Clean", doctor_id: "1", user_id: "1" )
  
      
