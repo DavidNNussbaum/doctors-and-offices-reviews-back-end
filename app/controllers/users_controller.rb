@@ -14,15 +14,23 @@ class UsersController < ApplicationController
    
   def create
     @user = User.find_by(email: user_params[:email])
-    if @user.nil?
+    if @user 
+      if @user.authenticate(user_params[:password])
+        render json: UserSerializer.new(@user).serializable_hash , status: :created, location: @user
+      else
+        render json: {error: "Incorrect Password. Try Again"}, status: :unauthorized
+      end
+      
+    else
       @user = User.new(user_params)
+      if @user.save
+        render json: UserSerializer.new(@user).serializable_hash , status: :created, location: @user
+      else
+        render json: @user.errors, status: :unprocessable_entity
+      end
     end
 
-    if @user.save
-      render json: UserSerializer.new(@user).serializable_hash , status: :created, location: @user
-    else
-      render json: @user.errors, status: :unprocessable_entity
-    end
+    
   end
 
    
