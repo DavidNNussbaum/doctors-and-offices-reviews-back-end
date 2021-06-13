@@ -17,5 +17,5 @@ MIT License
 
 
 
-don't forget to include a README in both frontend and backend repositories. In side each README, include the classic sections (Description, Installation, Usage, Contributing, License -> makeareadme.com) and a link to the other repository. 
+ 
  
