@@ -1,5 +1,5 @@
 class UserSerializer
-  include FastJsonapi::ObjectSerializer
+  include JSONAPI::Serializer
   attributes :first_name, :id, :doctors
 
   def doctors
