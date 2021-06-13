@@ -33,7 +33,6 @@ class UsersController < ApplicationController
     
   end
 
-   
   def destroy
     if @user.destroy
       render json: {message: "User successfully removed"}
@@ -48,7 +47,6 @@ class UsersController < ApplicationController
     @user = User.find_by(id: params[:id])
   end
 
-    
     def user_params
       params.require(:user).permit(:first_name, :email, :password, :password_confirmation)
     end
