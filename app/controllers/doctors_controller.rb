@@ -24,22 +24,22 @@ class DoctorsController < ApplicationController
     end
   
      
-    def update
-      if @doctor.update(doctor_params)
-        render json: @doctor
-      else
-        render json: @doctor.errors, status: :unprocessable_entity
-      end
-    end
+    # def update
+    #   if @doctor.update(doctor_params)
+    #     render json: @doctor
+    #   else
+    #     render json: @doctor.errors, status: :unprocessable_entity
+    #   end
+    # end
   
     
-    def destroy
-      if @doctor.destroy
-        render json: {message: "Doctor successfully removed"}
-      else
-        render json: {message: "Something went wrong! Errors: #{@doctor.errors.full_messages}"}
-      end
-    end
+    # def destroy
+    #   if @doctor.destroy
+    #     render json: {message: "Doctor successfully removed"}
+    #   else
+    #     render json: {message: "Something went wrong! Errors: #{@doctor.errors.full_messages}"}
+    #   end
+    # end
   
     private
        

@@ -2,9 +2,9 @@ class UsersController < ApplicationController
      
   before_action :find_user, only: [:show, :edit, :update, :destroy]
    
-  def show
-    render json: UserSerializer.new(@user).serializable_hash 
-  end
+  # def show
+  #   render json: UserSerializer.new(@user).serializable_hash 
+  # end
 
   def index
     @users = User.all
@@ -33,13 +33,13 @@ class UsersController < ApplicationController
     
   end
 
-  def destroy
-    if @user.destroy
-      render json: {message: "User successfully removed"}
-    else
-      render json: {message: "Something went wrong! Errors: #{@user.errors.full_messages}"}
-    end
-  end
+  # def destroy
+  #   if @user.destroy
+  #     render json: {message: "User successfully removed"}
+  #   else
+  #     render json: {message: "Something went wrong! Errors: #{@user.errors.full_messages}"}
+  #   end
+  # end
 
   private
 

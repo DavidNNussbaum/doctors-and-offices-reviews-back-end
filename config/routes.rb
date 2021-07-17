@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   resources :users
-  resources :reviews
+  resources :reviews, except: [:index]
   resources :doctors do 
     resources :reviews, only: [:index]
   end

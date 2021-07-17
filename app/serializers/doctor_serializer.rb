@@ -1,6 +1,6 @@
 class DoctorSerializer
   include JSONAPI::Serializer
-  attributes :first_name, :last_name, :address, :id
+  attributes :first_name, :last_name, :address, :id, :reviews
 
   attribute :name do |user|
     "#{user.first_name} #{user.last_name}"
