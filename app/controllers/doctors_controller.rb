@@ -3,13 +3,13 @@ class DoctorsController < ApplicationController
 
     def index
       @doctors = Doctor.order_by_last_name
-  
       render json: DoctorSerializer.new(@doctors).serializable_hash 
     end
   
  
     def show
-      render json: @doctor
+      # render json: @doctor
+      render json: DoctorSerializer.new(@doctor).serializable_hash
     end
   
    
